@@ -9,10 +9,15 @@ public final class SolarisCommandFramework {
     private static CommandRegistrar registrar;
 
     public static void init(JavaPlugin plugin, CommandManager<CommandSourceStack> manager) {
-        SolarisCommandFramework.registrar = new CommandRegistrar(plugin, manager);
+        ExceptionHandler.register(plugin, manager);
+        SolarisCommandFramework.registrar = new CommandRegistrar(manager);
     }
 
     public static void registerCommand(SolarisCommand command) {
+        if (registrar == null) {
+            throw new IllegalStateException(
+                    "SolarisCommandFramework.init() must be called before registerCommand()");
+        }
         registrar.register(command);
     }
 }
