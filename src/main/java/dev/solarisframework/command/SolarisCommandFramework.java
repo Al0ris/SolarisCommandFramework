@@ -1,4 +1,4 @@
-package io.github.Al0ris;
+package dev.solarisframework.command;
 
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import org.bukkit.plugin.java.JavaPlugin;
