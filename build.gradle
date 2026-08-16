@@ -19,3 +19,7 @@ dependencies {
     api("org.incendo:cloud-core:2.0.0")
     api("org.incendo:cloud-paper:2.0.0")
 }
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(25))
+}
