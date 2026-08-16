@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'io.github.Al0ris'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc"
+        url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+
+    api("org.incendo:cloud-core:2.0.0")
+    api("org.incendo:cloud-paper:2.0.0")
+}
